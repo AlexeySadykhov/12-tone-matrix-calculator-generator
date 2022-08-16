@@ -25,7 +25,7 @@ def calculate_prima(sr, sc):
             p.append(sc.get(x))
         else:
             print('Error')
-            print('There is no', x, 'pitch')
+            print(f"There is no {x} pitch")
             exit(1)
 
     if len(p) != len(set(p)):
@@ -49,7 +49,7 @@ else:
 intervals = np.diff(prima)
 
 filename = input('Enter file name to save:')
-workbook = xlsx.Workbook(filename + '.xlsx')
+workbook = xlsx.Workbook(f"{filename}.xlsx")
 worksheet = workbook.add_worksheet('matrix')
 
 for i, item in enumerate(prima):
@@ -77,7 +77,7 @@ Do you want to save P-form in mc? (y/n)""")
 if ans2 == 'y':
     seria_s = ' '.join(str(x) for x in prima)
     txt_filename = input('Enter file name to save:')
-    file = open(txt_filename + '.txt', 'w')
+    file = open(f"{txt_filename}.txt", "w")
     file.write(seria_s)
     file.close()
 print('Done')

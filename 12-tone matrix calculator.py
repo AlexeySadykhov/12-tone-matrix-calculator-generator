@@ -1,3 +1,4 @@
+import sys
 import random
 import numpy as np
 import xlsxwriter as xlsx
@@ -26,7 +27,7 @@ def calculate_prima(sr, sc):
         else:
             print('Error')
             print(f"There is no {x} pitch")
-            exit(1)
+            sys.exit(1)
 
     if len(p) != len(set(p)):
         ans1 = input("""Your list has duplicates. 
@@ -34,7 +35,7 @@ def calculate_prima(sr, sc):
         if ans1 == 'y':
             print('OK')
         else:
-            exit(0)
+            sys.exit(0)
     return p
 
 
